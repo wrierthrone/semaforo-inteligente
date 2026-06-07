@@ -1,142 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semáforo Inteligente</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
-        <h1>🚦 Sistema de Semáforo Inteligente</h1>
+        <h1>Sistema de Semáforo Inteligente</h1>
         <p>Projeto de Matemática Computacional Aplicada</p>
     </header>
 
     <main>
 
-        <section class="controles">
-            <h2>Entradas do Sistema</h2>
+        <section class="box">
 
-            <label>
-                <input type="checkbox" id="viaA">
-                Veículos Via A
-            </label>
+            <section class="controles">
+                <h2>Entradas do Sistema</h2>
 
-            <label>
-                <input type="checkbox" id="viaB">
-                Veículos Via B
-            </label>
+                <label>
+                    <input type="checkbox" id="viaA">
+                    Veículos Via A
+                </label>
 
-            <label>
-                <input type="checkbox" id="pedestre">
-                Pedestre aguardando
-            </label>
+                <label>
+                    <input type="checkbox" id="viaB">
+                    Veículos Via B
+                </label>
 
-            <button onclick="analisar()">Analisar Sistema</button>
-        </section>
+                <label>
+                    <input type="checkbox" id="pedestre">
+                    Pedestre aguardando
+                </label>
 
-        <section class="resultado">
-            <h2>Estado Atual</h2>
+                <button onclick="analisar()">Analisar Sistema</button>
+            </section>
 
-            <div class="semaforos">
+            <section class="resultado">
+                <h2>Estado Atual</h2>
 
-                <div class="grupo">
-                    <h3>Via A</h3>
+                <div class="semaforos">
 
-                    <div class="semaforo">
-                        <div id="a-vermelho" class="luz vermelho"></div>
-                        <div id="a-amarelo" class="luz amarelo"></div>
-                        <div id="a-verde" class="luz verde"></div>
+                    <div class="grupo">
+                        <h3>Via A</h3>
+
+                        <div class="semaforo">
+                            <div id="a-vermelho" class="luz vermelho"></div>
+                            <div id="a-amarelo" class="luz amarelo"></div>
+                            <div id="a-verde" class="luz verde"></div>
+                        </div>
                     </div>
+
+                    <div class="grupo">
+                        <h3>Via B</h3>
+
+                        <div class="semaforo">
+                            <div id="b-vermelho" class="luz vermelho"></div>
+                            <div id="b-amarelo" class="luz amarelo"></div>
+                            <div id="b-verde" class="luz verde"></div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="grupo">
-                    <h3>Via B</h3>
+                <div class="painel">
+                    <h3>Representação Binária</h3>
+                    <p id="binario">---</p>
 
-                    <div class="semaforo">
-                        <div id="b-vermelho" class="luz vermelho"></div>
-                        <div id="b-amarelo" class="luz amarelo"></div>
-                        <div id="b-verde" class="luz verde"></div>
-                    </div>
+                    <h3>Regra Lógica Aplicada</h3>
+                    <p id="regra">---</p>
                 </div>
-
-            </div>
-
-            <div class="painel">
-                <h3>Representação Binária</h3>
-                <p id="binario">---</p>
-
-                <h3>Regra Lógica Aplicada</h3>
-                <p id="regra">---</p>
-            </div>
+            </section>
         </section>
 
-        <section class="conjuntos">
-            <h2>Modelagem por Conjuntos</h2>
+        <section class="box">
 
-            <p>A = {veículos da Via A}</p>
-            <p>B = {veículos da Via B}</p>
-            <p>P = {pedestres}</p>
 
-            <p>
-                Exemplo:
-                x ∈ A → veículo pertence à Via A
-            </p>
+            <section class="conjuntos">
+                <h2>Modelagem por Conjuntos</h2>
+
+                <p>A = {veículos da Via A}</p>
+                <p>B = {veículos da Via B}</p>
+                <p>P = {pedestres}</p>
+
+                <p>
+                    Exemplo:
+                    x ∈ A → veículo pertence à Via A
+                </p>
+            </section>
+
+            <section class="tabela">
+                <h2>Tabela Verdade</h2>
+
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>P</th>
+                        <th>Resultado</th>
+                    </tr>
+
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Via A Verde</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Via A Verde</td>
+                    </tr>
+
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>Via B Verde</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>Alternância</td>
+                    </tr>
+
+                    <tr>
+                        <td>*</td>
+                        <td>*</td>
+                        <td>1</td>
+                        <td>Pedestre Prioritário</td>
+                    </tr>
+
+                </table>
+            </section>
         </section>
 
-        <section class="tabela">
-            <h2>Tabela Verdade</h2>
-
-            <table>
-                <tr>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>P</th>
-                    <th>Resultado</th>
-                </tr>
-
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>Via A Verde</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>Via A Verde</td>
-                </tr>
-
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>Via B Verde</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>Alternância</td>
-                </tr>
-
-                <tr>
-                    <td>*</td>
-                    <td>*</td>
-                    <td>1</td>
-                    <td>Pedestre Prioritário</td>
-                </tr>
-
-            </table>
-        </section>
 
     </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
