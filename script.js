@@ -76,7 +76,7 @@ function executarEstado() {
 
 function pararModoAutomatico() {
 
-    clearInterval(timerAutomatico);
+    clearTimeout(timerAutomatico);
     timerAutomatico = null;
 }
 
