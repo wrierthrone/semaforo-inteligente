@@ -150,11 +150,11 @@ function analisar() {
     else if (A && B) {
 
         document
-            .getElementById("a-amarelo")
+            .getElementById("a-verde")
             .classList.add("ativo");
 
         document
-            .getElementById("b-amarelo")
+            .getElementById("b-vermelho")
             .classList.add("ativo");
 
         binario = "110";
